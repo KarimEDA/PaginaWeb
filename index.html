@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Chatbot Conversacional</title>
+    <style>
+        /* Estilos para que el texto esté centrado en la parte superior */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .header {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+        }
+        .chatbot-image {
+            width: 200px;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Test de Chatbot Conversacional
+    </div>
+    <!-- Imagen del chatbot -->
+    <img src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png" alt="Imagen de Chatbot" class="chatbot-image">
+
+    
+    <script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "7068809c-79f5-472a-a4bd-2c95cd75d02a", // The ID of this integration.
+    region: "us-south", // The region your integration is hosted in.
+    serviceInstanceID: "b2406afd-fa3f-4b4d-9bdc-f1b018b96004", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+</body>
+</html>
